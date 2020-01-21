@@ -1,0 +1,14 @@
+<form [formGroup]="searchForm">
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="Search for:" [formControlName]="'query'" type="text">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-radio-group aria-label="Select an option" [formControlName]="'provider'">
+      <mat-radio-button value="Google">Google</mat-radio-button>
+      <mat-radio-button value="Bing">Bing</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</form>
