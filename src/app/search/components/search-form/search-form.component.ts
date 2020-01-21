@@ -28,7 +28,7 @@ export class SearchFormComponent implements OnInit, OnDestroy {
         filter(() => !!this.searchForm.valid),
       )
       .subscribe(newValue => {
-        console.log('Form value changed', newValue, this.searchForm.valid);
+        // console.log('Form value changed', newValue, this.searchForm.valid);
         this.search.emit(newValue);
       });
   }

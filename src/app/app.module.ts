@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchModule } from './search/search.module';
+import { EffectsService } from './state-management/effects.service';
 
 @NgModule({
   declarations: [
@@ -20,4 +21,7 @@ import { SearchModule } from './search/search.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(private effects: EffectsService) {
+    effects.start([]);
+  }
 }

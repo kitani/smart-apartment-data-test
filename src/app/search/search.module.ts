@@ -8,6 +8,7 @@ import { SearchResultsViewBingComponent } from './components/search-results-bing
 import { SearchResultsViewGoogleComponent } from './components/search-results-google/search-results-view-google/search-results-view-google.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatRadioModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MatInputModule, MatRadioModule } from '@angular/material';
     ReactiveFormsModule,
     MatInputModule,
     MatRadioModule,
+    RouterModule,
   ]
 })
 export class SearchModule {
