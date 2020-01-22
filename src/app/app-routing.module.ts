@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchPageComponent } from './search/components/search-page/search-page.component';
-import { SearchResultsBingComponent } from './search/components/search-results-bing/search-results-bing.component';
-import { SearchResultsGoogleComponent } from './search/components/search-results-google/search-results-google.component';
-
+import { SearchResultsComponent } from './search/components/search-results-bing/search-results.component';
 
 const routes: Routes = [
   {
@@ -11,13 +9,9 @@ const routes: Routes = [
     component: SearchPageComponent,
     children: [
       {
-        path: 'bing',
-        component: SearchResultsBingComponent,
+        path: ':provider',
+        component: SearchResultsComponent,
       },
-      {
-        path: 'google',
-        component: SearchResultsGoogleComponent,
-      }
     ]
   },
   {

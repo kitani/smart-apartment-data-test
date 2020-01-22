@@ -37,6 +37,8 @@ export class StoreService {
         }, state);
 
         this.stateSubject.next(newState);
+        // tslint:disable-next-line:no-console
+        console.info('New state', newState);
       });
   }
 }

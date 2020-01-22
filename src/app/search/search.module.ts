@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { SearchResultsBingComponent } from './components/search-results-bing/search-results-bing.component';
-import { SearchResultsGoogleComponent } from './components/search-results-google/search-results-google.component';
-import { SearchResultsViewBingComponent } from './components/search-results-bing/search-results-view-bing/search-results-view-bing.component';
-import { SearchResultsViewGoogleComponent } from './components/search-results-google/search-results-view-google/search-results-view-google.component';
+import { SearchResultsComponent } from './components/search-results-bing/search-results.component';
+import { SearchResultsViewComponent } from './components/search-results-bing/search-results-view-bing/search-results-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule, MatRadioModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -15,10 +13,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     SearchPageComponent,
     SearchFormComponent,
-    SearchResultsBingComponent,
-    SearchResultsGoogleComponent,
-    SearchResultsViewBingComponent,
-    SearchResultsViewGoogleComponent,
+    SearchResultsComponent,
+    SearchResultsViewComponent,
   ],
   imports: [
     CommonModule,

@@ -5,7 +5,10 @@ export interface SearchRequest {
 
 export interface SearchState {
   lastSearch: SearchRequest;
-  searchResults: any;
+  searchResults: {
+    results: any;
+    request: SearchRequest;
+  };
 }
 
 export const InitialSearchState: SearchState = {
@@ -13,7 +16,13 @@ export const InitialSearchState: SearchState = {
     provider: null,
     query: null,
   },
-  searchResults: null,
+  searchResults: {
+    results: null,
+    request: {
+      provider: null,
+      query: null,
+    }
+  },
 };
 
 export type SearchProvider = 'Google' | 'Bing';
