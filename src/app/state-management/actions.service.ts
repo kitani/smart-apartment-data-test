@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 export class ActionsService {
   private actionsSubject = new Subject<Action>();
 
-  public actionsStream = this.actionsSubject.asObservable();
+  public actions$ = this.actionsSubject.asObservable();
 
   constructor() {
   }

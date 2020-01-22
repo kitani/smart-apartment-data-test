@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchRequest } from '../../models';
 import { ActionsService } from '../../../state-management/actions.service';
-import { makeSearchRequest } from '../../models/actions';
+import { makeSearchRequest } from '../../state-management/search.actions';
 
 @Component({
   selector: 'app-search-page',

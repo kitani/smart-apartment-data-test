@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchModule } from './search/search.module';
 import { EffectsService } from './state-management/effects.service';
+import { SearchEffects } from './search/state-management/search.effects';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { EffectsService } from './state-management/effects.service';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private effects: EffectsService) {
-    effects.start([]);
+  constructor(private effectsService: EffectsService, private searchEffects: SearchEffects) {
+    effectsService.start([...searchEffects.getSearchEffects()]);
   }
 }
