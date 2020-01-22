@@ -3,13 +3,15 @@ import { SearchService } from '../services/search.service';
 import { Action, Effect } from '../../state-management/models';
 import { SEARCH_ACTION_TYPES, searchRequestSuccess } from './search.actions';
 import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { SearchModule } from '../search.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: SearchModule,
 })
 export class SearchEffects {
-  constructor(private search: SearchService) {
+  constructor(private search: SearchService, private router: Router) {
   }
 
   public getSearchEffects = (): Effect[] => [
@@ -23,6 +25,7 @@ export class SearchEffects {
 
     return this.search.getSearchResults(action.payload).pipe(
       map(searchResult => [searchRequestSuccess(searchResult, action.payload)]),
+      tap(result => this.router.navigate([`/search/${action.payload.provider}`])),
     );
-  };
+  }
 }

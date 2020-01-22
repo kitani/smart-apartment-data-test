@@ -7,6 +7,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchModule } from './search/search.module';
 import { EffectsService } from './state-management/effects.service';
 import { SearchEffects } from './search/state-management/search.effects';
+import { StoreService } from './state-management/store.service';
+import { initialState } from './state-management/models';
+import { searchReducers } from './search/state-management/search.reducers';
+import { addReducerKey } from './state-management/helpers';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,12 @@ import { SearchEffects } from './search/state-management/search.effects';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(private effectsService: EffectsService, private searchEffects: SearchEffects) {
+  constructor(
+    private effectsService: EffectsService,
+    private searchEffects: SearchEffects,
+    private store: StoreService,
+  ) {
     effectsService.start([...searchEffects.getSearchEffects()]);
+    store.start(initialState, [...addReducerKey(searchReducers, 'search')]);
   }
 }
