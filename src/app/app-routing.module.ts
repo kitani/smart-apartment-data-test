@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SearchPageComponent } from './search/components/search-page/search-page.component';
-import { SearchResultsComponent } from './search/components/search-results-bing/search-results.component';
+import { SearchResultsComponent } from './search/components/search-results/search-results.component';
 import { SignInComponent } from './auth/components/sign-in/sign-in.component';
 import { PrivateZoneComponent } from './auth/components/private-zone/private-zone.component';
 
