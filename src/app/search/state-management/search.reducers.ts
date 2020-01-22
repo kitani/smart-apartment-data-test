@@ -10,6 +10,13 @@ const newSearchRequest: ReducerFn<SearchState> = (action, state) => {
   return {
     ...state,
     lastSearch: action.payload,
+    searchResults: {
+      results: null,
+      request: {
+        provider: null,
+        query: null,
+      }
+    },
   };
 };
 

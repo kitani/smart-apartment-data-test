@@ -7,6 +7,7 @@ import { SearchRequest } from '../../../models';
 })
 export class SearchResultsViewComponent implements OnInit {
   @Input() results: { results: any, request: SearchRequest };
+  @Input() provider: string;
 
   constructor() {
   }

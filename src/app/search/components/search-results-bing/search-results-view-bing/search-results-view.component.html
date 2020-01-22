@@ -1,2 +1,10 @@
-<p>Search results: {{results.result | json}}</p>
-<p>Search request: {{results.request.query}}</p>
+<div *ngIf="results.request.query && results.request.provider">
+  <div *ngIf="provider === results.request.provider">
+    <p>You searched {{provider}} with {{results.request.query}}</p>
+    <p>Search results: {{results.result | json}}</p>
+  </div>
+
+  <div *ngIf="provider !== results.request.provider">
+    <p>Loading results for {{provider}} search</p>
+  </div>
+</div>
