@@ -10,16 +10,14 @@ import { makeSearchRequest } from '../../state-management/search.actions';
 })
 export class SearchPageComponent implements OnInit {
 
-  constructor(public store: ActionsService) {
+  constructor(public actions: ActionsService) {
   }
 
   onSearch(request: SearchRequest): void {
-    // console.log('Make search request with', request);
-    this.store.dispatch(makeSearchRequest(request.query, request.provider));
+    this.actions.dispatch(makeSearchRequest(request.query, request.provider));
   }
 
   ngOnInit() {
-    // this.store.actionsStream.subscribe(action => console.log('ACTION: ', action.type, action.payload));
   }
 
 }

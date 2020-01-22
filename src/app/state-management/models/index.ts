@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { InitialSearchState, SearchRequest, SearchState } from '../../search/models';
+import { AuthState, InitialAuthState } from '../../auth/models';
 
 export interface Action {
   type: string;
@@ -21,8 +22,10 @@ export interface KeyedReducerFn<T> {
 
 export interface State {
   search: SearchState;
+  auth: AuthState;
 }
 
 export const initialState: State = {
   search: InitialSearchState,
+  auth: InitialAuthState,
 };

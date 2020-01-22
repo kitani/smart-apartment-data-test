@@ -1,0 +1,27 @@
+<div *ngIf="!loading">
+  <p>
+    <a routerLink="/search">Go to search</a>
+  </p>
+
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit(signInForm.value)">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Email" [formControlName]="'login'" type="text">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" [formControlName]="'password'" type="text">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button mat-raised-button  type="submit" [disabled]="isFormDisabled()">Sign in</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="loading">
+  <p>Loading...</p>
+</div>

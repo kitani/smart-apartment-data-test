@@ -1,4 +1,8 @@
 <form [formGroup]="searchForm">
+  <p>
+    <a routerLink="/auth/sign-in">Go to sign in</a>
+  </p>
+
   <div>
     <mat-form-field>
       <input matInput placeholder="Search for:" [formControlName]="'query'" type="text">

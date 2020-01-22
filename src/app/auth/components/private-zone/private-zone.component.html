@@ -1,0 +1,14 @@
+<div>
+  <ul>
+    <li>
+      <a routerLink="/search">Go to search</a>
+    </li>
+    <li>
+      <a routerLink="/auth/sign-in">Go to sign in</a>
+    </li>
+  </ul>
+
+  <p>
+    Auth data: {{authState | async | json}}
+  </p>
+</div>
